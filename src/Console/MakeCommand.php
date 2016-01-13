@@ -32,8 +32,8 @@ class MakeCommand extends Command
         $path = 'src/application/'.str_replace('.', '/', $state);
         $absolutePath = public_path($path);
         $controller = implode(array_map(function($piece) {
-            return ucfirst(camel_case($piece));
-        }, $statePieces)) . 'Ctrl';
+                return ucfirst(camel_case($piece));
+            }, $statePieces)) . 'Ctrl';
         $name = end($statePieces);
 
         $variables = compact('name', 'state', 'absolutePath', 'path', 'controller', 'abstractOption', 'templateOption', 'controllerOption');
@@ -73,6 +73,6 @@ class MakeCommand extends Command
 
     private function getPath($suffix)
     {
-        return __DIR__.'/make/' . $this->templates[$suffix] . '.blade.php';
+        return __DIR__.'/../templates/' . $this->templates[$suffix] . '.blade.php';
     }
 }

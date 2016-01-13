@@ -15,6 +15,6 @@ class AngularScaffoldingsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands(new MakeCommand);
+        $this->commands(MakeCommand::class);
     }
 }
